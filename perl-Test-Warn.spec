@@ -4,10 +4,10 @@
 #
 Name     : perl-Test-Warn
 Version  : 0.36
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz
-Summary  : 'Perl extension to test methods for warnings'
+Summary  : Perl extension to test methods for warnings
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -24,6 +24,7 @@ cpan Test::Warn
 Summary: dev components for the perl-Test-Warn package.
 Group: Development
 Provides: perl-Test-Warn-devel = %{version}-%{release}
+Requires: perl-Test-Warn = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Warn package.

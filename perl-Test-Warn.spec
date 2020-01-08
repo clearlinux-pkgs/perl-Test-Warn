@@ -4,12 +4,13 @@
 #
 Name     : perl-Test-Warn
 Version  : 0.36
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz
-Summary  : Perl extension to test methods for warnings
+Summary  : 'Perl extension to test methods for warnings'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Test-Warn-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Sub::Uplevel)
 
@@ -30,14 +31,24 @@ Requires: perl-Test-Warn = %{version}-%{release}
 dev components for the perl-Test-Warn package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Warn package.
+Group: Default
+Requires: perl-Test-Warn = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Warn package.
+
+
 %prep
 %setup -q -n Test-Warn-0.36
+cd %{_builddir}/Test-Warn-0.36
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -47,7 +58,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -67,8 +78,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Warn.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Test::Warn.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Warn.pm

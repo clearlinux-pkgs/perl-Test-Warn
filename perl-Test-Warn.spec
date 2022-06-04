@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Warn
 Version  : 0.36
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.36.tar.gz
 Summary  : 'Perl extension to test methods for warnings'
@@ -85,4 +85,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Warn.pm
+/usr/lib/perl5/*

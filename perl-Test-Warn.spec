@@ -5,7 +5,7 @@
 #
 Name     : perl-Test-Warn
 Version  : 0.37
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.37.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.37.tar.gz
 Summary  : 'Perl extension to test methods for warnings'
